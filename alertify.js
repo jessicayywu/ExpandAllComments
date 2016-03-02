@@ -46,7 +46,6 @@ document.getElementsByTagName('body')[0].appendChild(newSection);
 				<button class="alertify-button alertify-button-ok" id="alertify-ok">OK</button>
 			</nav>
 		</article>
-		<a id="alertify-resetFocus" class="alertify-resetFocus" href="#">Reset Focus</a>
 	</div>
 </section>
 */
