@@ -1,15 +1,15 @@
 /*javascript: */
 function deleteAlertify() {
-  document.getElementById("alertify").remove();
+    document.getElementById("alertify").remove();
 }
 
-if(document.getElementById("alertify") != null) {
-  deleteAlertify();
+if (document.getElementById("alertify") != null) {
+    deleteAlertify();
 }
 
 var newSection = document.createElement("section");
 newSection.id = "alertify";
-newSection.className = "alertify alertify-alert";
+newSection.className = "alertify alertify-confirm";
 
 var innerDiv = document.createElement("div");
 innerDiv.className = "alertify-dialog";
@@ -24,13 +24,20 @@ innerP.innerText = "...";
 var innerNav = document.createElement("nav");
 innerNav.className = "alertify-buttons";
 
-var innerBtn = document.createElement("button");
-innerBtn.className = "alertify-button alertify-button-ok";
-innerBtn.id = "alertify-ok";
-innerBtn.innerText = "OK";
-innerBtn.addEventListener( 'click' , deleteAlertify );
+var innerOKBtn = document.createElement("button");
+innerOKBtn.className = "alertify-button alertify-button-cancel";
+innerOKBtn.id = "alertify-button-cancel";
+innerOKBtn.innerText = "Cancel";
+innerOKBtn.addEventListener('click', deleteAlertify);
 
-innerNav.appendChild(innerBtn);
+var innerCancelBtn = document.createElement("button");
+innerCancelBtn.className = "alertify-button alertify-button-ok";
+innerCancelBtn.id = "alertify-ok";
+innerCancelBtn.innerText = "OK";
+innerCancelBtn.addEventListener('click', deleteAlertify);
+
+innerNav.appendChild(innerOKBtn);
+innerNav.appendChild(innerCancelBtn);
 innerArticle.appendChild(innerP);
 innerArticle.appendChild(innerNav);
 innerDiv.appendChild(innerArticle);
@@ -43,6 +50,7 @@ document.getElementsByTagName('body')[0].appendChild(newSection);
 		<article class="alertify-inner">
 			<p class="alertify-message">...</p>
 			<nav class="alertify-buttons">
+				<button class="alertify-button alertify-button-cancel" id="alertify-cancel">Cancel</button>
 				<button class="alertify-button alertify-button-ok" id="alertify-ok">OK</button>
 			</nav>
 		</article>
