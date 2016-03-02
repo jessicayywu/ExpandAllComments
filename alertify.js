@@ -1,10 +1,10 @@
 /*javascript: */
-if(document.getElementById("alertify") != null) {
+function deleteAlertify() {
   document.getElementById("alertify").remove();
 }
 
-function deleteAlertify() {
-  document.getElementById("alertify").remove();
+if(document.getElementById("alertify") != null) {
+  deleteAlertify();
 }
 
 var newSection = document.createElement("section");
