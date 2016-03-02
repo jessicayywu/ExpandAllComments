@@ -1,7 +1,5 @@
 /*javascript:*/
-for(var i = 0; i < 100; i++) {
-  setTimeout('document.getElementById("expandBtn").click();', 1000);
-}
-alert("已全部展開!");
-
-/* 判斷document.getElementById("expandBtn") != null browser會掛掉QQ */
+var comments = document.getElementsByClassName("count")[1].innerText; /* 共 ... 則回應 */
+var count = Math.floor(comments.split(' ')[1] / 50 - 2); /* 展開幾次 */
+for(var i = 0; i < count; i++)
+  document.getElementById("expandBtn").click();
