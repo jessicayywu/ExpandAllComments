@@ -3,16 +3,16 @@ var comments = document.getElementsByClassName("count")[1].innerText;　// 共 .
 var count = Math.floor(comments.split(' ')[1] / 50 - 2); // 展開幾次
 
 function deleteAlertify() {
-	document.getElementById("alertify").remove();
+  document.getElementById("alertify").remove();
 }
 
 function expandAll() {
-	for(var i = 0; i < count; i++)
-		document.getElementById("expandBtn").click();
+  for(var i = 0; i < count; i++)
+    document.getElementById("expandBtn").click();
 }
 
 if (count < 20) { // if the number of comments is less than 1000
-	expandAll();
+  expandAll();
 }
 else { // display the alertify dialog
   // delete the original alertify dialog
