@@ -3,7 +3,8 @@ var comments = document.getElementsByClassName("count")[1].innerText;　// "共 
 var count = Math.round(comments.split(' ')[1] / 50 - 2); // number of times to expand
 
 function deleteAlertify() {
-  document.getElementById("alertify").remove();
+  newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+  setTimeout('document.getElementById("alertify").remove();', 500);
 }
 
 function expandAll() {
