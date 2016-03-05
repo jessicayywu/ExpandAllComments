@@ -1,6 +1,6 @@
 /* javascript: */
-var comments = document.getElementsByClassName("count")[1].innerText;　// 共 ... 則回應
-var count = Math.ceil(comments.split(' ')[1] / 50 - 2); // 展開幾次
+var comments = document.getElementsByClassName("count")[1].innerText;　// "共 ... 則回應"
+var count = Math.ceil(comments.split(' ')[1] / 50 - 2); // number of times to expand
 
 function deleteAlertify() {
   document.getElementById("alertify").remove();
