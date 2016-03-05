@@ -1,6 +1,7 @@
 /*javascript: */
 function deleteAlertify() {
-    document.getElementById("alertify").remove();
+    newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+    setTimeout('document.getElementById("alertify").remove();', 500);
 }
 
 if (document.getElementById("alertify") != null) {
