@@ -37,7 +37,7 @@ else { // display the alertify dialog
   // p, alert message
   var innerP = document.createElement("p");
   innerP.className = "alertify-message";
-	innerP.innerText = "...";
+  innerP.innerText = "留言超過五百則，您確定要展開嗎？";
 
   // nav
   var innerNav = document.createElement("nav");
@@ -46,7 +46,7 @@ else { // display the alertify dialog
   // cancel button
   var innerCancelBtn = document.createElement("button");
   innerCancelBtn.className = "alertify-button alertify-button-cancel";
-	innerCancelBtn.id = "alertify-cancel";
+  innerCancelBtn.id = "alertify-cancel";
   innerCancelBtn.innerText = "Cancel";
   innerCancelBtn.addEventListener('click', deleteAlertify);
 
