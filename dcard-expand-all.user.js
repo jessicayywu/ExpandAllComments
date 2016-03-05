@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Dcard Expand All Comments
-// @version      0.2
+// @version      1.0
 // @description  Expand all comments on Dcard
 // @author       White Hat & Who
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
@@ -50,7 +50,7 @@ var innerCancelBtn = document.createElement("button");
 innerCancelBtn.className = "alertify-button alertify-button-cancel";
 innerCancelBtn.id = "alertify-cancel";
 innerCancelBtn.innerText = "Cancel";
-innerCancelBtn.addEventListener('click', hideAlertify);
+innerCancelBtn.addEventListener('click', deleteAlertify);
 
 var innerOKBtn = document.createElement("button");
 innerOKBtn.className = "alertify-button alertify-button-ok";
@@ -58,16 +58,8 @@ innerOKBtn.id = "alertify-ok";
 innerOKBtn.innerText = "OK";
 innerOKBtn.addEventListener('click', function() {
     expandAllComments();
-    hideAlertify();
+    deleteAlertify();
 });
-
-innerNav.appendChild(innerCancelBtn);
-innerNav.appendChild(innerOKBtn);
-innerArticle.appendChild(innerP);
-innerArticle.appendChild(innerNav);
-innerDiv.appendChild(innerArticle);
-newSection.appendChild(innerDiv);
-document.getElementsByTagName('body')[0].appendChild(newSection);
 
 waitForKeyElements('#expandBtn', addExpandAllButton);
 
@@ -82,9 +74,21 @@ function expandAllComments() {
 }
 
 function showAlertify() {
-    newSection.className = "alertify alertify-confirm"
+    innerNav.appendChild(innerCancelBtn);
+    innerNav.appendChild(innerOKBtn);
+    innerArticle.appendChild(innerP);
+    innerArticle.appendChild(innerNav);
+    innerDiv.appendChild(innerArticle);
+    newSection.appendChild(innerDiv);
+    document.getElementsByTagName('body')[0].appendChild(newSection);
+    setTimeout(function() {
+        newSection.className = "alertify alertify-confirm";
+    }, 250);
 }
 
-function hideAlertify() {
+function deleteAlertify() {
     newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+    setTimeout(function() {
+        document.getElementById("expand-alertify").remove();
+    }, 500);
 }
