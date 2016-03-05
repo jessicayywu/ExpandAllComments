@@ -23,7 +23,8 @@ else { // display the alertify dialog
   // session
   var newSection = document.createElement("section");
   newSection.id = "alertify";
-  newSection.className = "alertify alertify-confirm";
+  newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+  setTimeout('newSection.className = "alertify alertify-confirm";', 500);
 
   // div
   var innerDiv = document.createElement("div");
