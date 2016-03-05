@@ -9,7 +9,8 @@ if (document.getElementById("alertify") != null) {
 
 var newSection = document.createElement("section");
 newSection.id = "alertify";
-newSection.className = "alertify alertify-confirm";
+newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+setTimeout('newSection.className = "alertify alertify-confirm";', 500);
 
 var innerDiv = document.createElement("div");
 innerDiv.className = "alertify-dialog";
