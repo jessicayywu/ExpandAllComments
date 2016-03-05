@@ -18,7 +18,7 @@ var expandAllBtn = document.createElement('button');
 expandAllBtn.setAttribute("class", "btn btn-default");
 expandAllBtn.textContent = "展開留言";
 expandAllBtn.addEventListener("click", function() {
-    comments = document.getElementsByClassName("count")[1].innerText.split(' ')[1];  /* 共 {comments} 則回應 */
+    comments = document.getElementsByClassName("count")[1].innerText.split(' ')[1]; /* 共 {comments} 則回應 */
     count = Math.round(comments / 50 - 2); /* 展開幾次 */
     if (comments <= 500) {
         expandAllComments();
@@ -31,7 +31,7 @@ expandAllBtn.addEventListener("click", function() {
 var newSection = document.createElement("section");
 newSection.id = "expand-alertify";
 newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
-setTimeout('newSection.className = "alertify alertify-confirm";', 500);
+
 
 var innerDiv = document.createElement("div");
 innerDiv.className = "alertify-dialog";
@@ -50,7 +50,7 @@ var innerCancelBtn = document.createElement("button");
 innerCancelBtn.className = "alertify-button alertify-button-cancel";
 innerCancelBtn.id = "alertify-cancel";
 innerCancelBtn.innerText = "Cancel";
-innerCancelBtn.addEventListener('click', deleteAlertify);
+innerCancelBtn.addEventListener('click', hideAlertify);
 
 var innerOKBtn = document.createElement("button");
 innerOKBtn.className = "alertify-button alertify-button-ok";
@@ -58,8 +58,16 @@ innerOKBtn.id = "alertify-ok";
 innerOKBtn.innerText = "OK";
 innerOKBtn.addEventListener('click', function() {
     expandAllComments();
-    deleteAlertify();
+    hideAlertify();
 });
+
+innerNav.appendChild(innerCancelBtn);
+innerNav.appendChild(innerOKBtn);
+innerArticle.appendChild(innerP);
+innerArticle.appendChild(innerNav);
+innerDiv.appendChild(innerArticle);
+newSection.appendChild(innerDiv);
+document.getElementsByTagName('body')[0].appendChild(newSection);
 
 waitForKeyElements('#expandBtn', addExpandAllButton);
 
@@ -74,15 +82,9 @@ function expandAllComments() {
 }
 
 function showAlertify() {
-    innerNav.appendChild(innerCancelBtn);
-    innerNav.appendChild(innerOKBtn);
-    innerArticle.appendChild(innerP);
-    innerArticle.appendChild(innerNav);
-    innerDiv.appendChild(innerArticle);
-    newSection.appendChild(innerDiv);
-    document.getElementsByTagName('body')[0].appendChild(newSection);
+    newSection.className = "alertify alertify-confirm"
 }
 
-function deleteAlertify() {
-    document.getElementById("expand-alertify").remove();
+function hideAlertify() {
+    newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
 }
