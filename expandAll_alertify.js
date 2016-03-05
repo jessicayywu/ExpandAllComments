@@ -1,6 +1,6 @@
 /* javascript: */
 var comments = document.getElementsByClassName("count")[1].innerText;　// 共 ... 則回應
-var count = Math.floor(comments.split(' ')[1] / 50 - 2); // 展開幾次
+var count = Math.ceil(comments.split(' ')[1] / 50 - 2); // 展開幾次
 
 function deleteAlertify() {
   document.getElementById("alertify").remove();
@@ -11,7 +11,7 @@ function expandAll() {
     document.getElementById("expandBtn").click();
 }
 
-if (count < 20) { // if the number of comments is less than 1000
+if (count < 10) { // if the number of comments is less than 500
   expandAll();
 }
 else { // display the alertify dialog
