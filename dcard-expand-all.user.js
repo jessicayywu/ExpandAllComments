@@ -30,7 +30,8 @@ expandAllBtn.addEventListener("click", function() {
 // create alertify element
 var newSection = document.createElement("section");
 newSection.id = "expand-alertify";
-newSection.className = "alertify alertify-confirm";
+newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
+setTimeout('newSection.className = "alertify alertify-confirm";', 500);
 
 var innerDiv = document.createElement("div");
 innerDiv.className = "alertify-dialog";
