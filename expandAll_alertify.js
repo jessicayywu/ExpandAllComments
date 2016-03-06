@@ -1,6 +1,6 @@
 /* javascript: */
-var comments = document.getElementsByClassName("count")[1].innerText;　// "共 ... 則回應"
-var count = Math.round(comments.split(' ')[1] / 50 - 2); // number of times to expand
+var comments = document.getElementsByClassName("count")[1].innerText.split(' ')[1];　// "共 {comments} 則回應"
+var count = Math.round(comments / 50 - 2); // number of times to expand
 
 function deleteAlertify() {
   newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
@@ -12,7 +12,7 @@ function expandAll() {
     document.getElementById("expandBtn").click();
 }
 
-if (count < 10) { // if the number of comments is less than 500
+if (count <= 500) { // if the number of comments is less than 500
   expandAll();
 }
 else { // display the alertify dialog
