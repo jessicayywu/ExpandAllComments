@@ -7,7 +7,7 @@
 // @match        https://www.dcard.tw/*
 // @downloadURL  
 // @updateURL    
-// @grant        None
+// @grant        none
 // ==/UserScript==
 
 var comments;
@@ -18,7 +18,7 @@ var expandAllBtn = document.createElement('button');
 expandAllBtn.setAttribute("class", "btn btn-default");
 expandAllBtn.textContent = "展開留言";
 expandAllBtn.addEventListener("click", function() {
-    comments = document.getElementsByClassName("count")[1].innerText.split(' ')[1]; /* 共 {comments} 則回應 */
+    comments = document.getElementsByClassName("count")[1].textContent.split(' ')[1]; /* 共 {comments} 則回應 */
     count = Math.round(comments / 50 - 2); /* 展開幾次 */
     if (comments <= 500) {
         expandAllComments();
