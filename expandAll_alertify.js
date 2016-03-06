@@ -12,7 +12,7 @@ function expandAll() {
     document.getElementById("expandBtn").click();
 }
 
-if (count <= 500) { // if the number of comments is less than 500
+if (comments <= 500) { // if the number of comments is less than 500
   expandAll();
 }
 else { // display the alertify dialog
