@@ -41,7 +41,7 @@ innerArticle.className = "alertify-inner";
 
 var innerP = document.createElement("p");
 innerP.className = "alertify-message";
-innerP.innerText = "留言超過五百則，您確定要展開嗎？";
+innerP.textContent = "留言超過五百則，您確定要展開嗎？";
 
 var innerNav = document.createElement("nav");
 innerNav.className = "alertify-buttons";
@@ -49,13 +49,13 @@ innerNav.className = "alertify-buttons";
 var innerCancelBtn = document.createElement("button");
 innerCancelBtn.className = "alertify-button alertify-button-cancel";
 innerCancelBtn.id = "alertify-cancel";
-innerCancelBtn.innerText = "Cancel";
+innerCancelBtn.textContent = "Cancel";
 innerCancelBtn.addEventListener('click', deleteAlertify);
 
 var innerOKBtn = document.createElement("button");
 innerOKBtn.className = "alertify-button alertify-button-ok";
 innerOKBtn.id = "alertify-ok";
-innerOKBtn.innerText = "OK";
+innerOKBtn.textContent = "OK";
 innerOKBtn.addEventListener('click', function() {
     expandAllComments();
     deleteAlertify();
