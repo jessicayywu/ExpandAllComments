@@ -1,5 +1,5 @@
 /* javascript: */
-var comments = document.getElementsByClassName("count")[1].innerText.split(' ')[1];　// "共 {comments} 則回應"
+var comments = document.getElementsByClassName("count")[1].textContent.split(' ')[1];　// "共 {comments} 則回應"
 var count = Math.round(comments / 50 - 2); // number of times to expand
 
 function deleteAlertify() {
@@ -21,7 +21,7 @@ else { // display the alertify dialog
     deleteAlertify();
   }
 
-  // session
+  // section
   var newSection = document.createElement("section");
   newSection.id = "alertify";
   newSection.className = "alertify alertify-hide alertify-hidden alertify-isHidden";
@@ -38,7 +38,7 @@ else { // display the alertify dialog
   // p, alert message
   var innerP = document.createElement("p");
   innerP.className = "alertify-message";
-  innerP.innerText = "留言超過五百則，您確定要展開嗎？";
+  innerP.textContent = "留言超過五百則，您確定要展開嗎？";
 
   // nav
   var innerNav = document.createElement("nav");
@@ -48,14 +48,14 @@ else { // display the alertify dialog
   var innerCancelBtn = document.createElement("button");
   innerCancelBtn.className = "alertify-button alertify-button-cancel";
   innerCancelBtn.id = "alertify-cancel";
-  innerCancelBtn.innerText = "Cancel";
+  innerCancelBtn.textContent = "Cancel";
   innerCancelBtn.addEventListener('click', deleteAlertify);
 
   // ok button
   var innerOKBtn = document.createElement("button");
   innerOKBtn.className = "alertify-button alertify-button-ok";
   innerOKBtn.id = "alertify-ok";
-  innerOKBtn.innerText = "OK";
+  innerOKBtn.textContent = "OK";
   innerOKBtn.addEventListener('click', deleteAlertify);
   innerOKBtn.addEventListener('click', expandAll); // expand the comments
 
@@ -80,4 +80,4 @@ else { // display the alertify dialog
     </div>
   </section>
   */
-  }
+}
